@@ -1,6 +1,9 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 
+from pages_objects.cart_page import Cart
+
+
 class HomePage:
     def __init__(self, driver, wait):
         self.driver = driver
@@ -21,5 +24,5 @@ class HomePage:
         return self.wait.until(EC.element_to_be_clickable(HomePage.button_fleece_jacket_locator))
 
     def shopping_cart_button(self):
-        return self.wait.until(EC.element_to_be_clickable((HomePage.shopping_cart_button_locator)))
-
+        self.wait.until(EC.element_to_be_clickable((HomePage.shopping_cart_button_locator))).click()
+        return Cart(self.driver, self.wait)

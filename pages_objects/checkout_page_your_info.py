@@ -1,6 +1,9 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 
+from pages_objects.checkout_page_overview import Overview_page
+
+
 class your_info:
     def __init__(self, driver, wait):
         self.driver = driver
@@ -21,5 +24,5 @@ class your_info:
         return self.wait.until(EC.element_to_be_clickable(your_info.postal_code_locator))
 
     def continue_button(self):
-        return self.wait.until(EC.element_to_be_clickable(your_info.continue_button_locator))
-
+        self.wait.until(EC.element_to_be_clickable(your_info.continue_button_locator)).click()
+        return Overview_page(self.driver, self.wait)
