@@ -7,6 +7,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from selenium.webdriver.edge.options import Options
 from webdriver_manager.firefox import GeckoDriverManager
+from selenium.webdriver.chrome.service import Service as CS
 
 
 
@@ -33,7 +34,8 @@ def setup(request):
         chrome_options.add_argument("--start-maximized")
         chrome_options.add_argument("--disable-features=PasswordManagerOnboarding")
         chrome_options.add_argument("--incognito")
-        driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=chrome_options)
+        service = CS(executable_path=ChromeDriverManager().install())
+        driver = webdriver.Chrome(service=service, options=chrome_options)
 
     elif browser_name == "ms_edge":
         options = Options()
