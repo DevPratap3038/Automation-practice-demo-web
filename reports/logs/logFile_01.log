@@ -1,0 +1,11 @@
+2025-04-26 20:06:25,471 : INFO : test_def_02 : Entring the Username - standard_user
+2025-04-26 20:06:25,618 : INFO : test_def_02 : Entring the Password - secret_sauce
+2025-04-26 20:06:25,724 : INFO : test_def_02 : Clicking the login button - 
+2025-04-26 20:06:25,993 : INFO : test_def_02 : Gitting current Url  = https://www.saucedemo.com/inventory.html
+2025-04-26 20:06:26,170 : INFO : test_def_02 : Entring the Username - problem_user
+2025-04-26 20:06:26,281 : INFO : test_def_02 : Entring the Password - secret_sauce
+2025-04-26 20:06:26,380 : INFO : test_def_02 : Clicking the login button - 
+2025-04-26 20:06:26,596 : INFO : test_def_02 : Gitting current Url  = https://www.saucedemo.com/inventory.html
+2025-04-26 20:06:26,705 : INFO : test_def_02 : Entring the Username - locked_out_user
+2025-04-26 20:06:26,822 : INFO : test_def_02 : Entring the Password - secret_sauce
+2025-04-26 20:06:26,919 : INFO : test_def_02 : Clicking the login button - 

@@ -24,19 +24,19 @@ class Test_class_02(baseclass):
 
         # home page actions
         log = self.GettingLoggerNow()
-        log.info("Entring the Username" + get_credintials["username"] )
+        log.info("Entring the Username - " + get_credintials["username"] )
         Log_In_page.username_input_box().send_keys(get_credintials["username"])
-        log.info("Entring the Password" + get_credintials["password"])
+        log.info("Entring the Password - " + get_credintials["password"])
         Log_In_page.password_input_box().send_keys(get_credintials["password"])
-        log.info("Clicking the login button")
+        log.info("Clicking the login button - ")
         Log_In_page.login_button()
         url = self.get_URL((By.XPATH, "//span[@class='title']"))
         log.info("Gitting current Url  = " + url)
         assert url == "https://www.saucedemo.com/inventory.html"
-    #     ,("locked_out_user","secret_sauce"),("visual_user","secret_sauce"),("error_user","secret_sauce")
+    #     ,("error_user","secret_sauce"),("visual_user","secret_sauce"),("performance_glitch_user","secret_sauce")
         self.driver.back()
         self.driver.refresh()
 
-    @pytest.fixture(params=[{"username":"standard_user","password":"secret_sauce"}, {"username":"problem_user", "password":"secret_sauce"}, {"username": "performance_glitch_user", "password":"secret_sauce"}])
+    @pytest.fixture(params=[{"username":"standard_user", "password": "secret_sauce"}, {"username": "problem_user", "password": "secret_sauce"}, {"username": "locked_out_user", "password": "secret_sauce"}])
     def get_credintials(self, request):
         return request.param
